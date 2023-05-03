@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'standard-with-typescript',
+    'plugin:i18next/recommended'
   ],
   parser: '@typescript-eslint/parser',
   overrides: [
@@ -16,7 +17,8 @@ module.exports = {
     project: ["./tsconfig.json"]
   },
   plugins: [
-    'react'
+    'react',
+    "i18next"
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -26,7 +28,8 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "i18next/no-literal-string": ['error', {markupOnly: true}]
   },
   globals: {
       '__IS_DEV': true
