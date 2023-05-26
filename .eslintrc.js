@@ -3,23 +3,15 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:i18next/recommended'
-  ],
+  extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
   parser: '@typescript-eslint/parser',
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ["./tsconfig.json"]
   },
-  plugins: [
-    'react',
-    "i18next"
-  ],
+  plugins: ['react', "i18next"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
@@ -29,10 +21,19 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "i18next/no-literal-string": ['error', {markupOnly: true}],
-    'max-len': ['error', {"ignoreComments" : true}]
+    "i18next/no-literal-string": ['error', {
+      markupOnly: true,
+      ignoreAttribute: ['data-testid', 'to']
+    }],
+    'max-len': ['error', {
+      "ignoreComments": true,
+      "code": 130
+    }],
+    '@typescript-eslint/no-misused-promises': ["off", {
+      "checksConditionals": false
+    }]
   },
   globals: {
-      '__IS_DEV': true
+    '__IS_DEV': true
   }
-}
+};

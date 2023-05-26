@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
     className?: string
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
     const {
         className
     } = props
@@ -29,3 +29,5 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
         </Button>
     )
 }
+
+export default ThemeSwitcher

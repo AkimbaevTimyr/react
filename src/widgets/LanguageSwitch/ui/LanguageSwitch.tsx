@@ -10,7 +10,7 @@ interface LanguageSwitchProps {
 export const LanguageSwitch = ({ className }: LanguageSwitchProps) => {
     const { t, i18n } = useTranslation()
 
-    const toogle = () => {
+    const toogle = async () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
     }
 
